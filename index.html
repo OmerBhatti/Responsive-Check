@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form  onsubmit="addLinks(event)">
+    <input width="100"; type="text" id="link" placeholder="https://google.com">
+    <input type="submit" name="submit" value="Go">
+    </form>
+<center>
+    <div class="device">
+        <h2>Iphone</h2>
+        <iframe class="frame" height="685px" width="375px" src="" frameborder="1"></iframe>
+    </div>
+</center>
+<center>
+    <div class="device">
+        <h2>Ipad</h2>
+        <iframe class="frame" height="931px" width="770px" src="" frameborder="1"></iframe>
+    </div>
+<center>
+    <div class="device">
+        <h2>Android</h2>
+        <iframe class="frame" height="661px" width="402px" src="" frameborder="1"></iframe>
+    </div>
+</center>
+
+<script type="text/javascript">
+frames = document.querySelectorAll(".frame");
+function addLinks(e)
+{
+    e.preventDefault();
+    let link = document.querySelector("#link").value;
+    for(let i=0;i<frames.length;i++)
+    {
+        frames[i].src = link;
+    }
+}
+frames[0].contentWindow.onscroll = function(e) {
+    frames[2].contentWindow.scrollTop = frames[0].contentWindow.scrollTop;
+    frames[2].contentWindow.scrollLeft = frames[0].contentWindow.scrollLeft;
+};
+frames[2].contentWindow.onscroll = function(e) {
+    frames[0].contentWindow.scrollTop = frames[2].contentWindow.scrollTop;
+    frames[0].contentWindow.scrollLeft = frames[2].contentWindow.scrollLeft;
+};
+</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" 
+        crossorigin="anonymous">
+</script>
+</body>
+
+</html>

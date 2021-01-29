@@ -1,0 +1,23 @@
+body{
+    font-family: arial,sans-ser;
+
+}
+.device{
+margin:0px 50px;
+float:left;
+width:auto;
+}
+
+form{
+width:50%;
+margin:0 auto;
+}
+
+input[type="text"]{
+width:40vw;
+padding:5px 20px;
+}
+
+input[type="submit"]{
+    padding:5px 25px;
+}
